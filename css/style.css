@@ -3,7 +3,7 @@ body {
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 .top {
   display: flex;
@@ -14,19 +14,19 @@ body {
   height: 80px;
   background-color: #cf2b2b;
   /* margin: 0 auto; */
-  color: #FFFFFF;
+  color: #ffffff;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1;
 }
-.top > div{
+.top > div {
   margin-left: 15px;
 }
-.top > span{
+.top > span {
   margin-right: 15px;
 }
-.top img{
+.top img {
   width: 55px;
   height: 55px;
 }
@@ -36,10 +36,10 @@ body {
 .top p {
   margin-top: 3px;
   font-size: 13.5px;
-  
 }
-.righteous, .food>h1{
-  font-family: 'Righteous', cursive;
+.righteous,
+.food > h1 {
+  font-family: "Righteous", cursive;
 }
 .main {
   width: 100%;
@@ -48,7 +48,9 @@ body {
   /* overflow: hidden; */
 }
 
-.menu, .menu-main, .menu-drink {
+.menu,
+.menu-main,
+.menu-drink {
   /* Melhor opção (grid) para utilizar junto com o overflow para não perder
      o tamanho das divs*/
   display: grid;
@@ -58,34 +60,36 @@ body {
   margin-left: 15px;
   gap: 16px;
 }
-.starter{
-    /* Melhor opção (grid) para utilizar junto com o overflow para não perder
+.starter {
+  /* Melhor opção (grid) para utilizar junto com o overflow para não perder
      o tamanho das divs*/
-     display: grid;
-     grid-auto-flow: column;
-     overflow: scroll;
-     /* overscroll-behavior-inline: contain; */
-     margin-left: 15px;
-     gap: 16px;
+  display: grid;
+  grid-auto-flow: column;
+  overflow: scroll;
+  /* overscroll-behavior-inline: contain; */
+  margin-left: 15px;
+  gap: 16px;
 }
 .food {
   width: 100%;
 }
-.last{
+.last {
   margin-right: 15px;
 }
-.space{
+.space {
   margin-top: 14px;
 }
-.check{
+.check {
   position: absolute;
   top: 15px;
   right: 10px;
   border-radius: 50%;
-  background-color: #32B72F;
+  background-color: #32b72f;
 }
 
-.dish, .drink,.main-dish {
+.dish,
+.drink,
+.main-dish {
   box-sizing: border-box;
   width: 162px;
   height: 255px;
@@ -98,7 +102,7 @@ body {
   border-radius: 10px;
   box-shadow: 3px 5px rgba(0, 0, 0, 0.1);
 }
-.teste{
+.teste {
   box-sizing: border-box;
   width: 162px;
   height: 255px;
@@ -112,16 +116,18 @@ body {
 }
 /* Ao escolher o prato vai criar uma borda */
 .chosed {
-  border: 3.5px solid #32B72F;
+  border: 3.5px solid #32b72f;
 }
-.dish > img, .main-dish > img, .drink> img {
+.dish > img,
+.main-dish > img,
+.drink > img {
   width: 134px;
   height: 87px;
   margin: 12px 0px 8px 0;
   border-radius: 5px;
   box-shadow: 4px 4px #e5e5e5;
 }
-.teste >img{
+.teste > img {
   width: 134px;
   height: 87px;
   margin: 12px 0px 8px 0;
@@ -195,45 +201,44 @@ body {
   justify-content: center;
   width: 100%;
   height: 75px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   position: fixed;
   bottom: 0;
   right: 0;
 }
-.button{
+.button {
   display: flex;
   justify-content: center;
   text-align: center;
   height: 65%;
   width: 80%;
-  
 }
 
-button{
+button {
   color: #ffffff;
-  background-color: #CBCBCB;
+  background-color: #cbcbcb;
   font-size: 16px;
   border-radius: 10px;
   line-height: 27px;
   width: 100%;
 }
 
-.done{
+.done {
   width: 80%;
-  background-color: #50D074;
+  background-color: #50d074;
 }
-.blur{
-filter: blur(8px);
+.blur {
+  filter: blur(8px);
 }
 
-.checkOut{
+.checkOut {
   display: flex;
   flex-direction: column;
   width: 85%;
   align-self: center;
   align-content: center;
   height: 275px;
-  background-color: #50D074;
+  background-color: #50d074;
   position: fixed;
   top: 35%;
   left: 10%;
@@ -241,54 +246,57 @@ filter: blur(8px);
   z-index: 1;
 }
 
-.checkOut-container{
+.checkOut-container {
   width: 80%;
   margin: 16px auto;
 }
-.checkOut{
+.checkOut {
   border-radius: 15px;
   color: #ffffff;
   font-size: 15px;
 }
-.checkOut .order{
+.checkOut .order {
   /* color: white; */
   /* background-color: red; */
   margin: 16px 0;
 }
-.mainDishOrder{
+.mainDishOrder {
   margin: 18px 0;
 }
-.dishOrder, .mainDishOrder, .drinkOrder, .checkOutPrice{
+.dishOrder,
+.mainDishOrder,
+.drinkOrder,
+.checkOutPrice {
   display: flex;
   justify-content: space-between;
 }
 
-.checkOutPrice{
+.checkOutPrice {
   font-size: 18px;
   margin: 22px 0;
   font-weight: 700;
 }
-.checkOut h1{
+.checkOut h1 {
   font-size: 19px;
   font-weight: 700;
 }
-.buttonOrder{
+.buttonOrder {
   background-color: #ffffff;
-  color: #50D074;
+  color: #50d074;
   font-weight: 700;
   font-size: 16px;
 }
-.buttonCancel{
-  background-color: #50D074;
+.buttonCancel {
+  background-color: #50d074;
   border: none;
   font-weight: 700;
   font-size: 16px;
 }
 
-.hidden{
+.hidden {
   display: none;
 }
-.block{
+.block {
   position: fixed;
   top: 0;
   left: 0;
@@ -297,6 +305,8 @@ filter: blur(8px);
   height: 100%;
   z-index: -1;
 }
-.noScroll{
-  margin: 0; height: 100%; overflow: hidden
+.noScroll {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
 }

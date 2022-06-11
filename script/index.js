@@ -45,7 +45,7 @@ function closeOrder() {
 
 function checkOut() {
   document.querySelector(".main").classList.add("blur");
-  document.querySelector(".main").classList.add("noScroll");
+  document.querySelector("body").classList.add("noScroll");
   // document.querySelector(".main").style.display = "none";
   document.querySelector(".checkOut").classList.remove("hidden");
   chosedDish = document.querySelector(".menu .chosed .chosedDish").innerHTML;
@@ -94,7 +94,7 @@ function checkOut() {
 
 function makeOrder() {
   let url = "https://wa.me/+5547988608094";
-  let message = `?text=Olá, gostaria de fazer o pedido:%0a- Entrada: ${chosedDish}%0a- Prato Principal: ${chosedMainDish}%0a- Bebida: ${chosedDrink}%0aTotal: ${checkOutValue.toLocaleString(
+  let message = `?text=Olá, gostaria de fazer o pedido:%0a%0a- Entrada: ${chosedDish}%0a- Prato Principal: ${chosedMainDish}%0a- Bebida: ${chosedDrink}%0a%0a*Total:* ${checkOutValue.toLocaleString(
     "pt-br",
     {
       style: "currency",
@@ -110,4 +110,5 @@ function cancel() {
   dish.classList.remove("chosed");
   mainDish.classList.remove("chosed");
   drink.classList.remove("chosed");
+  document.querySelector("body").classList.remove("noScroll");
 }
