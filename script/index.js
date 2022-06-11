@@ -95,7 +95,7 @@ function checkOut() {
 
 function makeOrder() {
   let url = "https://wa.me/+5547988608094";
-  let message = `?text=Olá, gostaria de fazer o pedido:\n-Entrada: ${chosedDish}\n-Prato Principal:${chosedMainDish}\n-Bebida: ${chosedDrink}\nTotal: ${checkOutValue.toLocaleString(
+  let message = `?text=Olá, gostaria de fazer o pedido:%0a-Entrada: ${chosedDish}%0a-Prato Principal:${chosedMainDish}%0a-Bebida: ${chosedDrink}%0aTotal: ${checkOutValue.toLocaleString(
     "pt-br",
     {
       style: "currency",
