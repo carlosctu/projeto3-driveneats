@@ -1,13 +1,15 @@
 let dish;
 let mainDish;
 let drink;
-let chosedDish;
+let chosedDishPrice;
 let chosedMainDish;
+let chosedMainDishPrice;
 let chosedDrink;
+let chosedDrinkPrice;
+let checkOutValue;
 
 function chosedOption(element) {
   dish = document.querySelector(".menu .chosed");
-  // console.log(dish);
   mainDish = document.querySelector(".menu-main .chosed");
   drink = document.querySelector(".menu-drink .chosed");
 
@@ -43,26 +45,24 @@ function closeOrder() {
 
 function checkOut() {
   document.querySelector(".main").classList.add("blur");
-  let teste = document.querySelector(".checkOut").classList.remove("hidden")
-  let chosedDish = document.querySelector(
-    ".menu .chosed .chosedDish"
-  ).innerHTML;
-  let chosedDishPrice = Number(
+  document.querySelector(".checkOut").classList.remove("hidden");
+  chosedDish = document.querySelector(".menu .chosed .chosedDish").innerHTML;
+  chosedDishPrice = Number(
     document.querySelector(".menu .chosed .value").innerHTML
   );
-  let chosedMainDish = document.querySelector(
+  chosedMainDish = document.querySelector(
     ".menu-main .chosed .chosedDish"
   ).innerHTML;
-  let chosedMainDishPrice = Number(
+  chosedMainDishPrice = Number(
     document.querySelector(".menu-main .chosed .value").innerHTML
   );
-  let chosedDrink = document.querySelector(
+  chosedDrink = document.querySelector(
     ".menu-drink .chosed .chosedDish"
   ).innerHTML;
-  let chosedDrinkPrice = Number(
+  chosedDrinkPrice = Number(
     document.querySelector(".menu-drink .chosed .value").innerHTML
   );
-  let checkOutValue = Number(
+  checkOutValue = Number(
     (chosedDrinkPrice + chosedMainDishPrice + chosedDishPrice).toFixed(2)
   );
   document.querySelector(".dishOrder .dishName").innerHTML = chosedDish;
@@ -91,4 +91,25 @@ function checkOut() {
   // console.log(teste)
   // let nome = prompt("Qual é seu nome?")
   // let endereço = prompt("Qual é seu endereço?")
+}
+
+function makeOrder() {
+  let url = "https://wa.me/+5547988608094";
+  let message = `?text=Olá, gostaria de fazer o pedido:\n-Entrada: ${chosedDish}\n-Prato Principal:${chosedMainDish}\n-Bebida: ${chosedDrink}\nTotal: ${checkOutValue.toLocaleString(
+    "pt-br",
+    {
+      style: "currency",
+      currency: "BRL",
+    }
+  )}`;
+  document.querySelector(".link").href=`${url}${message}`
+  // prompt("teste");
+  // console.log();
+}
+function cancel() {
+  document.querySelector(".checkOut").classList.add("hidden");
+  document.querySelector(".main").classList.remove("blur");
+  dish.classList.remove("chosed");
+  mainDish.classList.remove("chosed");
+  drink.classList.remove("chosed");
 }

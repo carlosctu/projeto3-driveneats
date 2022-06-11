@@ -45,7 +45,7 @@ body {
   width: 100%;
   margin: 102px 0px;
   z-index: -1;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .menu, .menu-main, .menu-drink {
