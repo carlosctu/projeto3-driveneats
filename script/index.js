@@ -8,7 +8,8 @@ let chosedDrink;
 let chosedDrinkPrice;
 let checkOutValue;
 let costumerName;
-let adress
+let adress;
+
 function chosedOption(element) {
   dish = document.querySelector(".menu .chosed");
   mainDish = document.querySelector(".menu-main .chosed");
@@ -50,50 +51,55 @@ function checkOut() {
   costumerName = prompt("Qual é seu nome?");
   adress = prompt("Qual é seu endereço?");
 
-  // document.querySelector(".main").style.display = "none";
-  document.querySelector(".checkOut").classList.remove("hidden");
-  chosedDish = document.querySelector(".menu .chosed .chosedDish").innerHTML;
-  chosedDishPrice = Number(
-    document.querySelector(".menu .chosed .value").innerHTML
-  );
-  chosedMainDish = document.querySelector(
-    ".menu-main .chosed .chosedDish"
-  ).innerHTML;
-  chosedMainDishPrice = Number(
-    document.querySelector(".menu-main .chosed .value").innerHTML
-  );
-  chosedDrink = document.querySelector(
-    ".menu-drink .chosed .chosedDish"
-  ).innerHTML;
-  chosedDrinkPrice = Number(
-    document.querySelector(".menu-drink .chosed .value").innerHTML
-  );
-  checkOutValue = Number(
-    (chosedDrinkPrice + chosedMainDishPrice + chosedDishPrice).toFixed(2)
-  );
-  document.querySelector(".dishOrder .dishName").innerHTML = chosedDish;
-  document.querySelector(".dishOrder .dishValue").innerHTML =
-    chosedDishPrice.toLocaleString("pt-br", {
-      style: "currency",
-      currency: "BRL",
-    });
-  document.querySelector(".mainDishOrder .dishName").innerHTML = chosedMainDish;
-  document.querySelector(".mainDishOrder .dishValue").innerHTML =
-    chosedMainDishPrice.toLocaleString("pt-br", {
-      style: "currency",
-      currency: "BRL",
-    });
-  document.querySelector(".drinkOrder .dishName").innerHTML = chosedDrink;
-  document.querySelector(".drinkOrder .dishValue").innerHTML =
-    chosedDrinkPrice.toLocaleString("pt-br", {
-      style: "currency",
-      currency: "BRL",
-    });
-  document.querySelector(".checkOut .totalValue").innerHTML =
-    checkOutValue.toLocaleString("pt-br", {
-      style: "currency",
-      currency: "BRL",
-    });
+  if (costumerName == null || adress == null) {
+    cancel();
+  } else {
+    // document.querySelector(".main").style.display = "none";
+    document.querySelector(".checkOut").classList.remove("hidden");
+    chosedDish = document.querySelector(".menu .chosed .chosedDish").innerHTML;
+    chosedDishPrice = Number(
+      document.querySelector(".menu .chosed .value").innerHTML
+    );
+    chosedMainDish = document.querySelector(
+      ".menu-main .chosed .chosedDish"
+    ).innerHTML;
+    chosedMainDishPrice = Number(
+      document.querySelector(".menu-main .chosed .value").innerHTML
+    );
+    chosedDrink = document.querySelector(
+      ".menu-drink .chosed .chosedDish"
+    ).innerHTML;
+    chosedDrinkPrice = Number(
+      document.querySelector(".menu-drink .chosed .value").innerHTML
+    );
+    checkOutValue = Number(
+      (chosedDrinkPrice + chosedMainDishPrice + chosedDishPrice).toFixed(2)
+    );
+    document.querySelector(".dishOrder .dishName").innerHTML = chosedDish;
+    document.querySelector(".dishOrder .dishValue").innerHTML =
+      chosedDishPrice.toLocaleString("pt-br", {
+        style: "currency",
+        currency: "BRL",
+      });
+    document.querySelector(".mainDishOrder .dishName").innerHTML =
+      chosedMainDish;
+    document.querySelector(".mainDishOrder .dishValue").innerHTML =
+      chosedMainDishPrice.toLocaleString("pt-br", {
+        style: "currency",
+        currency: "BRL",
+      });
+    document.querySelector(".drinkOrder .dishName").innerHTML = chosedDrink;
+    document.querySelector(".drinkOrder .dishValue").innerHTML =
+      chosedDrinkPrice.toLocaleString("pt-br", {
+        style: "currency",
+        currency: "BRL",
+      });
+    document.querySelector(".checkOut .totalValue").innerHTML =
+      checkOutValue.toLocaleString("pt-br", {
+        style: "currency",
+        currency: "BRL",
+      });
+  }
 }
 
 function makeOrder() {
@@ -108,10 +114,16 @@ function makeOrder() {
   document.querySelector(".link").href = `${url}${message}`;
 }
 function cancel() {
+  let removeDone = document.querySelector(".button button");
   document.querySelector(".checkOut").classList.add("hidden");
   document.querySelector(".main").classList.remove("blur");
   dish.classList.remove("chosed");
   mainDish.classList.remove("chosed");
   drink.classList.remove("chosed");
+
+  removeDone.classList.remove("done");
+  removeDone.innerHTML = "Escolha 3 itens para fechar o pedido";
+  removeDone.disabled = true;
+
   document.querySelector("body").classList.remove("noScroll");
 }
