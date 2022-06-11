@@ -44,9 +44,11 @@ body {
 .main {
   width: 100%;
   margin: 102px 0px;
+  z-index: -1;
+  /* overflow: hidden; */
 }
 
-.menu {
+.menu, .menu-main, .menu-drink {
   /* Melhor opção (grid) para utilizar junto com o overflow para não perder
      o tamanho das divs*/
   display: grid;
@@ -55,6 +57,16 @@ body {
   /* overscroll-behavior-inline: contain; */
   margin-left: 15px;
   gap: 16px;
+}
+.starter{
+    /* Melhor opção (grid) para utilizar junto com o overflow para não perder
+     o tamanho das divs*/
+     display: grid;
+     grid-auto-flow: column;
+     overflow: scroll;
+     /* overscroll-behavior-inline: contain; */
+     margin-left: 15px;
+     gap: 16px;
 }
 .food {
   width: 100%;
@@ -65,8 +77,18 @@ body {
 .space{
   margin-top: 14px;
 }
-.dish {
-  /* box-sizing: inherit; */
+.check{
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  border-radius: 50%;
+  background-color: #32B72F;
+}
+.hidden{
+  display: none;
+}
+.dish, .drink,.main-dish {
+  box-sizing: border-box;
   width: 162px;
   height: 255px;
   display: flex;
@@ -77,10 +99,30 @@ body {
   position: relative;
   border-radius: 10px;
 }
-.dish i {
-  font-style: italic;
+.teste{
+  box-sizing: border-box;
+  width: 162px;
+  height: 255px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #ffffff;
+  position: relative;
+  border-radius: 10px;
 }
-.dish > img {
+/* Ao escolher o prato vai criar uma borda */
+.chosed {
+  border: 3.5px solid #32B72F;
+}
+.dish > img, .main-dish > img, .drink> img {
+  width: 134px;
+  height: 87px;
+  margin: 12px 0px 8px 0;
+  border-radius: 5px;
+  box-shadow: 4px 4px #e5e5e5;
+}
+.teste >img{
   width: 134px;
   height: 87px;
   margin: 12px 0px 8px 0;
@@ -119,8 +161,8 @@ body {
   height: 24px;
   bottom: 0;
   left: 0;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 .price > p {
   font-size: 14.5px;
@@ -151,8 +193,8 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 50px;
-  background-color: #154042;
+  height: 75px;
+  background-color: #FFFFFF;
   position: fixed;
   bottom: 0;
   right: 0;
@@ -161,10 +203,39 @@ body {
   display: flex;
   justify-content: center;
   text-align: center;
-  width: 60%;
+  height: 65%;
+  width: 80%;
+  
 }
-.button button{
+
+button{
+  color: #ffffff;
+  background-color: #CBCBCB;
+  font-size: 16px;
   border-radius: 10px;
   line-height: 27px;
-  background-color: #d5e9dd;
+  width: 100%;
+}
+
+.done{
+  width: 80%;
+  background-color: #50D074;
+}
+.blur{
+filter: blur(8px);
+}
+
+.checkOut{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  align-self: center;
+  align-content: center;
+  height: 200px;
+  background-color: #50D074;
+  position: fixed;
+  top: 40%;
+  left: 10%;
+  z-index: 1;
 }
