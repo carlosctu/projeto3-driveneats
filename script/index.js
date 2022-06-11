@@ -7,7 +7,8 @@ let chosedMainDishPrice;
 let chosedDrink;
 let chosedDrinkPrice;
 let checkOutValue;
-
+let costumerName;
+let adress
 function chosedOption(element) {
   dish = document.querySelector(".menu .chosed");
   mainDish = document.querySelector(".menu-main .chosed");
@@ -46,6 +47,9 @@ function closeOrder() {
 function checkOut() {
   document.querySelector(".main").classList.add("blur");
   document.querySelector("body").classList.add("noScroll");
+  costumerName = prompt("Qual é seu nome?");
+  adress = prompt("Qual é seu endereço?");
+
   // document.querySelector(".main").style.display = "none";
   document.querySelector(".checkOut").classList.remove("hidden");
   chosedDish = document.querySelector(".menu .chosed .chosedDish").innerHTML;
@@ -100,9 +104,8 @@ function makeOrder() {
       style: "currency",
       currency: "BRL",
     }
-  )}`;
-  document.querySelector(".link").href=`${url}${message}`
-
+  )}%0a%0aNome: ${costumerName}%0aEndereço: ${adress}`;
+  document.querySelector(".link").href = `${url}${message}`;
 }
 function cancel() {
   document.querySelector(".checkOut").classList.add("hidden");
