@@ -45,7 +45,7 @@ body {
   width: 100%;
   margin: 102px 0px;
   z-index: -1;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .menu, .menu-main, .menu-drink {
@@ -96,6 +96,7 @@ body {
   background-color: #ffffff;
   position: relative;
   border-radius: 10px;
+  box-shadow: 3px 5px rgba(0, 0, 0, 0.1);
 }
 .teste{
   box-sizing: border-box;
@@ -240,11 +241,12 @@ filter: blur(8px);
   z-index: 1;
 }
 
-.checkOut>div{
+.checkOut-container{
   width: 80%;
   margin: 16px auto;
 }
 .checkOut{
+  border-radius: 15px;
   color: #ffffff;
   font-size: 15px;
 }
@@ -272,7 +274,6 @@ filter: blur(8px);
 }
 .buttonOrder{
   background-color: #ffffff;
-  /* width: 80%; */
   color: #50D074;
   font-weight: 700;
   font-size: 16px;
@@ -286,4 +287,16 @@ filter: blur(8px);
 
 .hidden{
   display: none;
+}
+.block{
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* background-color: red; */
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.noScroll{
+  margin: 0; height: 100%; overflow: hidden
 }
