@@ -52,9 +52,13 @@ function checkOut() {
   while (costumerName == "") {
     costumerName = prompt("Qual é seu nome?");
   }
-  adress = prompt("Qual é seu endereço?");
-  while (adress == "") {
+  if (costumerName !== null) {
     adress = prompt("Qual é seu endereço?");
+    while (adress == "") {
+      adress = prompt("Qual é seu endereço?");
+    }
+  }else if(costumerName == null){
+    cancel()
   }
 
   if (costumerName == null || adress == null) {
