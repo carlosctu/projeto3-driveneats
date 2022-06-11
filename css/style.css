@@ -84,9 +84,7 @@ body {
   border-radius: 50%;
   background-color: #32B72F;
 }
-.hidden{
-  display: none;
-}
+
 .dish, .drink,.main-dish {
   box-sizing: border-box;
   width: 162px;
@@ -154,6 +152,8 @@ body {
 }
 
 .price {
+  display: flex;
+  justify-content: center;
   background-color: #cf2b2b;
   /* text-align: center; */
   width: 100%;
@@ -228,14 +228,62 @@ filter: blur(8px);
 .checkOut{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 80%;
+  width: 85%;
   align-self: center;
   align-content: center;
-  height: 200px;
+  height: 275px;
   background-color: #50D074;
   position: fixed;
-  top: 40%;
+  top: 35%;
   left: 10%;
+
   z-index: 1;
+}
+
+.checkOut>div{
+  width: 80%;
+  margin: 16px auto;
+}
+.checkOut{
+  color: #ffffff;
+  font-size: 15px;
+}
+.checkOut .order{
+  /* color: white; */
+  /* background-color: red; */
+  margin: 16px 0;
+}
+.mainDishOrder{
+  margin: 18px 0;
+}
+.dishOrder, .mainDishOrder, .drinkOrder, .checkOutPrice{
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkOutPrice{
+  font-size: 18px;
+  margin: 22px 0;
+  font-weight: 700;
+}
+.checkOut h1{
+  font-size: 19px;
+  font-weight: 700;
+}
+.buttonOrder{
+  background-color: #ffffff;
+  /* width: 80%; */
+  color: #50D074;
+  font-weight: 700;
+  font-size: 16px;
+}
+.buttonCancel{
+  background-color: #50D074;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.hidden{
+  display: none;
 }
