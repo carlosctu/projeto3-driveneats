@@ -49,7 +49,13 @@ function checkOut() {
   document.querySelector(".main").classList.add("blur");
   document.querySelector("body").classList.add("noScroll");
   costumerName = prompt("Qual é seu nome?");
+  while (costumerName == "") {
+    costumerName = prompt("Qual é seu nome?");
+  }
   adress = prompt("Qual é seu endereço?");
+  while (adress == "") {
+    adress = prompt("Qual é seu endereço?");
+  }
 
   if (costumerName == null || adress == null) {
     cancel();
