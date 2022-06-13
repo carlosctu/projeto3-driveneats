@@ -20,14 +20,19 @@ function chosedOption(element) {
   drink = document.querySelector(".menu-drink .chosed");
 
   if (dish !== null && element.classList.contains("dish")) {
+    console.log(element)
+    document.querySelector(".menu .chosed .check").classList.add("hidden")
     dish.classList.remove("chosed");
   } else if (mainDish !== null && element.classList.contains("main-dish")) {
+    document.querySelector(".menu-main .chosed .check").classList.add("hidden")
     mainDish.classList.remove("chosed");
   } else if (drink !== null && element.classList.contains("drink")) {
+    document.querySelector(".menu-drink .chosed .check").classList.add("hidden")
     drink.classList.remove("chosed");
   }
 
   element.classList.add("chosed");
+  document.querySelector(".chosed .hidden").classList.remove("hidden")
   closeOrder();
 }
 
